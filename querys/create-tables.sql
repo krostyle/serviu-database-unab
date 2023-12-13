@@ -176,5 +176,3 @@ create table evaluacion (
     foreign key (id_vivienda) references vivienda(id_vivienda),
     foreign key (id_pareja) references pareja_evaluador(id_pareja)
 );
-
-
