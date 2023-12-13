@@ -1,5 +1,6 @@
+create database if not exists `serviu-subsidios` character set utf8 collate utf8_general_ci;
 
-
+use `serviu-subsidios`;
 
 create table region (
     id_region int auto_increment primary key,
@@ -57,6 +58,9 @@ create table postulante(
     foreign key (id_sexo) references sexo(id_sexo),
     foreign key (id_estado_civil) references estado_civil(id_estado_civil)
 );
+
+alter table postulante add id_conyuge int null,
+add foreign key (id_conyuge) references postulante(id_postulante);
 
 create table estado_solicitud(
     id_estado_solicitud int auto_increment primary key,
